@@ -53,20 +53,33 @@
 </script> 
 <!-- //scrolling script -->
 
+<!-- PRELOADER -->
+<script type="text/javascript">
+	// makes sure the whole site is loaded
+jQuery(window).load(function() {
+        // will first fade out the loading animation
+	jQuery("#status").fadeOut();
+        // will fade out the whole DIV that covers the website.
+	jQuery("#preloader").delay(500).fadeOut("slow");
+})
+</script>
+
 </head>
 
 <!-- Body -->
 <body>
-
+	  <div id="preloader">
+	<div id="status"></div>
+</div>
 <!-- banner -->
 	<div class="banner jarallax">
 		<div class="agileinfo-dot">
 			<div class="header">
 				<div class="container-fluid">
 					<div class="header-left">
-						<div class="w3layouts-logo grid__item">
+						<div class="w3layouts-logo grid__item logo">
 							<h1>
-								<a href="<?php echo $_SERVER ['REQUEST_URI']; ?>"><img src="images/logo-kinkyo.png" class="img-responsive center-block logo" alt="KingYo Temakeria" title="KingYo Temakeria" width="150px"></a>
+								<a href="<?php echo $_SERVER ['REQUEST_URI']; ?>" class=""><img src="images/logo-kinkyo.png" class="img-responsive center-block logo" alt="KingYo Temakeria" title="KingYo Temakeria" width="150px"></a>
 							</h1>
 						</div>
 					</div>
@@ -83,11 +96,11 @@
 							<!-- Collect the nav links, forms, and other content for toggling -->
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav">
-									<li><a class="active" href="index.html">Home</a></li>
-									<li><a href="#about" class="scroll">About</a></li>
-									<li><a href="#services" class="scroll">Services</a></li>
+									<li><a class="active" href="<?php echo $_SERVER['REQUEST_URI']; ?>">Inicio</a></li>
+									<li><a href="#about" class="scroll">Sobre</a></li>
+									<li><a href="#cardapio" class="scroll">Cardápio</a></li>
 									<li><a href="#chefs" class="scroll">Chefs</a></li>
-									<li><a href="#gallery" class="scroll">Gallery</a></li>	
+									<li><a href="#galeria" class="scroll">Galeria</a></li>	
 									<li><a href="#customer" class="scroll">Customers</a></li>
 									<li><a href="#contact" class="scroll">Contact</a></li>
 								</ul>
@@ -109,10 +122,10 @@
 					
 			</div>
 			<div class="agileits-banner-info">
-				<h3>welcome to</h3>
+				<h3>Kingyo Temakeria</h3>
 					<h2 class="rw-sentence">
-					<span>Food tastes better, eat with your </span>
-					<div class="rw-words rw-words-1">
+					<span class="hidden-xs">Food tastes better, eat with your </span>
+					<div class="rw-words rw-words-1 hidden-xs">
 						<span>Family</span>
 						<span>Friends</span>
 						<span>happiness</span>
@@ -121,7 +134,7 @@
 						<span>happiness</span>
 					</div>
 					</h2>
-					<a href="#" data-toggle="modal" data-target="#myModal2">Book Your Table</a>
+					<a href="#" data-toggle="modal" data-target="#myModal2">Avaliação</a>
 			</div>
 		</div>
 	</div>
@@ -179,200 +192,12 @@
 		</div>
 	</div>
 <!-- //modal -->
-	
-<!-- tabs -->	<!-- about -->
-<div class="demo" id="about">    
-	<div class="container"> 
-		<div class="w3ls-heading">
-			<h3>About us</h3>
-		</div>
-		<div class="horizontalTab" id="horizontalTab">
-			<ul class="resp-tabs-list list-group">
-				<li class="list-group-item text-center"></li>
-				<li class="list-group-item text-center"></li>
-				<li class="list-group-item text-center"></li>
-				<li class="list-group-item text-center"></li>
-			</ul>
-				<div class="resp-tabs-container">
-					<!-- section -->
-							<div class="bhoechie-tab-content active">
-										<h3 class="title">about</h3>
-								<div class="services-grids">
-									<div class="ser-img">
-										<h3>ONLY FRESH AND HEALTHY FOOD FOR YOUR FAMILY </h3>
-										<p>Integer sed blandit nisi, eget tempor nulla. Vivamus ut mi nec quam iaculis ultricies. 
-										Maecenas at placerat metus. Curabitur arcu purus, eleifend ut massa at, fringilla sagittis quam. 
-										Nulla volutpat tellus orci, id laoreet ante pretium id.
-										</p>
-										<a href="#myModal" data-toggle="modal"> Read More About Our Recipes</a>
-									</div>
-									<div class="ser-img1">
-										<img src="images/about.png" alt="" />
-									</div>
-									<div class="ser-info">
-										<p>Integer sed blandit nisi, eget tempor nulla. Vivamus ut mi nec quam iaculis ultricies. 
-										Maecenas at placerat metus. Curabitur arcu purus, eleifend ut massa at, fringilla sagittis quam. 
-										Nulla volutpat tellus orci, id laoreet ante pretium id.
-										</p>
-										<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam 
-										scelerisque magna non turpis euismod bibendum. 
-										</p>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-							<!--  section -->
-							<div class="bhoechie-tab-content">
-										<h3 class="title ab">Our Menu</h3>
-								<div class="services-grids">
-									<div class="col-md-6 menugrid">
-											<img src="images/b1.jpg" alt="" />
-									</div>
-									<div class="col-md-6 menugrid1 innergrid">
-											<h3>Sea food</h3>
-											<ul class="list ins1">
-												<li>prawns toast - <p>served with soup</p><span>$13.00</span></li>
-												<li>fish and chips - <p>Seasoned with sprinkling pepper</p><span>$16.09</span></li>
-												<li>boneless meat - <p>served with Onion sprinkled lemon</p><span>$11.69</span></li>
-												<li>Tasty rib meat - <p>Best quality product of herb</p><span>$12.00</span></li>
-												<li>congrio fish - <p>served with butter Cheese</p><span>$5.00</span></li>
-											</ul>
-									</div>
-									<div class="clearfix"></div>
-										<div class="col-md-6 innergrid">
-											<h3>Deserts</h3>
-											<ul class="list ins1">
-												<li>Chocolate Cake - <p>served with Creamy popins</p><span>$9.00</span></li>
-												<li>Classic delight - <p>soft better delighted coke</p><span>$14.69</span></li>
-												<li>Holiday special - <p>Splitting mix</p><span>$11.50</span></li>
-												<li>Mix fruit club - <p>served with soup</p><span>$10.00</span></li>
-												<li>Milk shake - <p>served with Ice cubes</p><span>$8.00</span></li>
-											</ul>
-										</div>
-										<div class="col-md-6 innergrid">
-												<h3>Salads</h3>
-											<ul class="list ins1">
-												<li>Fruit salad - <p>Served with mix fruits</p><span>$7.00</span></li>
-												<li>Honeymoon - <p>served with Icecream corner slide</p><span>$19.09</span></li>
-												<li>Choconuts - <p>served with melting candies</p><span>$11.69</span></li>
-												<li>Mixed fruit with almond - <p>served with Almond pieces</p><span>$13.00</span></li>
-												<li>cocoa salad - <p>served with nuts and cream</p><span>$16.50</span></li>
-											
-											</ul>
-										</div>
-								<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-				
-							<!--  search -->
-							<div class="bhoechie-tab-content">
-										<h3 class="title ab1">Why Visit Us?</h3>
-								<div class="services-grids">
-									<div class="about-2">
-										<h3>We select fresh and natural products</h3>
-										<img src="images/burger.jpg" alt="" />
-									</div>
-									<div class="about-info2">
-										<div class="top-grid">
-											<div class="col-md-6 grid">
-												<i class="fa fa-cutlery" aria-hidden="true"></i>
-												<h3>Healthy food</h3>
-												<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam. 
-												</p>
-											</div>
-											<div class="col-md-6 grid">
-												<i class="fa fa-apple" aria-hidden="true"></i>
-												<h3>Fresh fruits</h3>
-												<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam. 
-												</p>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="bottom-grid">
-											<div class="col-md-6 grid">
-												<i class="fa fa-glass" aria-hidden="true"></i>
-												<h3>Drink diet</h3>
-												<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam. 
-												</p>
-											</div>
-											<div class="col-md-6 grid">
-												<i class="fa fa-spoon" aria-hidden="true"></i>
-												<h3>Tasty snacks</h3>
-												<p>Pellentesque finibus dapibus volutpat. Curabitur imperdiet vulputate rhoncus. Nullam. 
-												</p>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="bhoechie-tab-content">
-										<h3 class="title ab2">why choose us</h3>
-								<div class="services-grids">
-									<div class="about-2 lastgrid">
-										<h3>delicious dishes</h3>
-										<h3>great place to enjoy</h3>
-										<p>Integer sed blandit nisi, eget tempor nulla. Vivamus ut mi nec quam iaculis ultricies. 
-										Maecenas at placerat metus. Curabitur arcu purus, eleifend ut massa at, fringilla sagittis quam. 
-										Nulla volutpat tellus orci, id laoreet ante pretium id. Ut iaculis quis eros ac bibendum.
-										</p>
-									</div>
-									<div class="about-info2">
-										<div class="col-md-6 last-grid">
-											<img src="images/b11.jpg" alt="" />
-										</div>
-										<div class="col-md-6 last-grid1">
-											<h3>High quality restaurant</h3>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-				</div>
-		</div>
-	</div>
-</div>
 
-<!-- tabs  js-->
-<script src="js/easy-responsive-tabs.js"></script>
-<script>
-$(document).ready(function () {
-$('#horizontalTab').easyResponsiveTabs({
-type: 'default', //Types: default, vertical, accordion           
-width: 'auto', //auto or any width like 600px
-fit: true,   // 100% fit in a container
-closed: 'accordion', // Start closed if in accordion view
-activate: function(event) { // Callback function if tab is switched
-var $tab = $(this);
-var $info = $('#tabInfo');
-var $name = $('span', $info);
-$name.text($tab.text());
-$info.show();
-}
-});
-$('#verticalTab').easyResponsiveTabs({
-type: 'vertical',
-width: 'auto',
-fit: true
-});
-});
-</script>
-
-<!-- //tabs-js  -->
-
-<!-- //tabs -->    <!-- //about -->
-
-	
-
-	
-	
-<!-- services -->
-<div class="services" id="services">
+<!-- About -->
+<div class="about" id="about">
 		<div class="container">
 			<div class="ser-top wthree-3 wow fadeInDown w3-service-head">
-				<h3>Our Services </h3>
+				<h3>Sobre Nós </h3>
 			</div>
 			<div class="w3-service-grids set-6">
 				<div class="col-md-4  services-w3-grid1 ser-left icon1 hi-icon-wrap hi-icon-effect-6">
@@ -415,7 +240,100 @@ fit: true
 			</div>	
 		</div>
 </div>
-<!-- /services -->
+<!-- /About -->
+	
+<!-- cardapio -->
+<div class="cardapio" id="cardapio">
+		<div class="container">
+			<div class="bhoechie-tab-content">
+				<h3 class="title_cardapio">Cardápio</h3>
+				<div class="services-grids">
+					<div class="col-md-6 menugrid">
+							<img src="images/b1.jpg" alt="" />
+					</div>
+					<div class="col-md-6 menugrid1 innergrid">
+							<h3>Entrada</h3>
+							<ul class="list ins1">
+								<li>01 - Shimeji <p>Pequenos Cogumelos na Manteiga</p></li>
+								<li>02 - Hot Holl <p>Salmão, Cebolina, Cream Cheese e Tare (8 Unidades)</p></li>
+								<li>03 - Hot Spice <p>Salmão Fray, Kani e Cream Cheese (4 Unidades)</p></li>
+								<li>04 - Hot Holl Doce <p>Banana com Doce de Leite</p></li>
+							</ul>
+					</div>
+					<div class="clearfix"></div>
+						<div class="col-md-6 innergrid">
+							<h3>Sahimi (Fatias de Peixe Cru)</h3>
+							<ul class="list ins1">
+								<li>05 - Salmão (6 Unidades)</li>
+								<li>06 - Carpaccio (10 Unidades) <p>Limão Siciliano, Flor de Sal e Azeite</p></li>
+								<li>07 - Carpaccio Pi (10 Unidades) <p>Alcaparras ao Molho do Chefe</p></li>
+							</ul>
+
+							<h3>Temaki</h3>
+							<ul class="list ins1">
+								<li>08 - Califórnia </li>
+								<li>09 - ------------------------------------------------------------ </li>
+								<li>10 - Salmão Puro </li>
+								<li>11 - Salmão e Cebolinha </li>
+								<li>12 - Salmão e Cream Cheese </li>
+								<li>13 - Salmão, Cream Cheese e Cebolinha </li>
+								<li>14 - Salmão, Maionese e Cebolinha </li>
+								<li>15 - Salmão Meio a Meio </li>
+								<li>16 - Salmão Grelhado, Cream e Cebolinha </li>
+								<li>17 - Salmão Grelhado c/ Shimeji, Cream e Cebolinha </li>
+								<li>18 - Salmão Empanado, Cream e Cebolinha </li>
+								<li>19 - Temaki Terapia - <p>Salmão Empanado, c/ Shimeji, Cream e Cebolinha</p></li>
+								<li>20 - Salmão c/ Shimeji, Amêndoas, Cream e Cebolinha </li>
+								<li>21 - Salmão c/ Limão Siciliano, Flor de Sal e Azeite </li>
+								<li>22 - Salmão c/ Nachos, Cream e Cebolinha </li>
+								<li>23 - Salmão Crispis, Cream e Cebolinha </li>
+								<li>24 - Temaki Shimeju c/ Cream e Cebolinha </li>
+								<li>25 - Temaki de Hot Holl, Salmão e Kani </li>
+								<li>26 - Temaki Especial Inteiro Empanado com Cream e Couve </li>
+								<li>27 - ------------------------------------------------------------ </li>
+								<li>28 - Salmão, Kani, Cream e Cebolinha </li>
+								<li>29 - Temaki 100% </li>
+							
+							</ul>
+						</div>
+						<div class="col-md-6 innergrid">
+							<h3>Uramaki (8 Unidades)</h3>
+							<ul class="list ins1">
+								<li>30 - Califórnia</li>
+								<li>31 - Salmão</li>
+								<li>32 - Kingyo</li>
+							</ul>
+
+							<h3>Neguiri</h3>
+							<ul class="list ins1">
+								<li>33 - Salmão</li>
+								<li>34 - Jou</li>
+							</ul>
+
+							<h3>Bebidas</h3>
+							<ul class="list ins1">
+								<li>39 - Água Mineral <p>Com e sem gás</p></li>
+								<li>40 - Refrigerante <p>Lata</p></li>
+								<li>41 - Cerveja Long Neck</li>
+								<li>42 - Água de Coco</li>
+								<li>43 - Chá</li>
+								<li>44 - H2O</li>
+							</ul>
+
+							<h3>Combinados</h3>
+							<ul class="list ins1">
+								<li>45 - Combinado Temaki 1 <p>Sashimi 5 un; Sushi 3 un; Temaki 1 un. Pequeno; (Qualquer Temaki Exeto os números 25 e 26)</p></li>
+								<li>46 - Combinado Temaki 2 <p>Jou 2 un; Hot Holl 2 un; Temaki 1 un. Pequeno; (Qualquer Temaki Exeto os números 25 e 26)</p></li>
+								<li>47 - Especial p/ 2 Pessoas (30 unidades) <p>Hossomaki Salmão 4 un; Uramaki Califórnia 4 un; Uramaki Salmão 4 un; Niguiri Salmão 4 un; Hot Holl 4 un; Jou 4 un; Sashimi Salmão 6 un.</p></li>
+							</ul>
+						</div>
+				<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>	
+		</div>
+</div>
+<!-- /cardapio -->
 
 <!-- our chefs -->
 <div class="ourchefs" id="chefs">
@@ -475,145 +393,151 @@ fit: true
 </div>
 <!-- //our chefs -->
 
-	
-<!-- gallery -->
-	<div class="gallery" id="gallery">
-			<div class="agileits_w3layouts_head">
-			<h3>Food Gallery</h3>
+<section id="galeria" class="padding-60">
+ <div class="">
+     <div class="row">
+     <div class="col-md-12">
+      <div class="text-center">
+       <h1 class="title-h1">Galeria de Fotos</h1>
+      </div>
+     </div>
+    </div>
+  <div class="row">
+    <div class="text-center">
+      <div class="toolbar mb2 mt2 padding-b-25">
+      <button class="btn fil-cat active" href="" data-rel="all">Tudo</button>
+      <button class="btn fil-cat" data-rel="pratos">Pratos</button>
+      <button class="btn fil-cat" data-rel="ambiente">Ambiente</button>
+      </div> 
+    </div> 
+
+    <div style="clear:both;"></div>   
+        <div id="portfolio">
+            <div class="w3layouts_gallery_grid tile scale-anm all ambiente">
+				<a href="images/p2.jpg" class="lsb-preview" data-lsb-group="header">
+					<div class="w3layouts_news_grid tile scale-anm bcards all ambiente">
+						<img src="images/p2.jpg" alt=" " class="img-responsive">
+					</div>
+				</a>
 			</div>
-			<div class="w3layouts_gallery_grids">	
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p1.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p1.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>Butter pizza</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p2.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p2.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>Pasta</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p13.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p13.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>Lemon cheese</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p4.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p4.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>Toasted puff</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p6.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p6.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>Burger Cheese</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p5.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p5.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>fried broccoli</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p7.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p7.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>Apple almond salad</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p8.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p8.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>Roasted meat</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p9.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p9.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>Pasta rolls</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p10.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p10.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>fruits</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p11.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p11.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>Meat Pizza</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 w3layouts_gallery_grid">
-					<a href="images/p12.jpg" class="lsb-preview" data-lsb-group="header">
-						<div class="w3layouts_news_grid">
-							<img src="images/p12.jpg" alt=" " class="img-responsive">
-							<div class="w3layouts_news_grid_pos">
-								<div class="wthree_text"><h3>Boiled eggs</h3></div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="clearfix"> </div>
+            <div class="w3layouts_gallery_grid tile scale-anm all ambiente">
+				<a href="images/p2.jpg" class="lsb-preview" data-lsb-group="header">
+					<div class="w3layouts_news_grid tile scale-anm bcards all ambiente">
+						<img src="images/p2.jpg" alt=" " class="img-responsive">
+					</div>
+				</a>
 			</div>
-</div>
-<!-- //gallery -->
+			<div class="w3layouts_gallery_grid tile scale-anm all ambiente">
+				<a href="images/p2.jpg" class="lsb-preview" data-lsb-group="header">
+					<div class="w3layouts_news_grid tile scale-anm bcards all ambiente">
+						<img src="images/p2.jpg" alt=" " class="img-responsive">
+					</div>
+				</a>
+			</div>
+			<div class="w3layouts_gallery_grid tile scale-anm all ambiente">
+				<a href="images/p2.jpg" class="lsb-preview" data-lsb-group="header">
+					<div class="w3layouts_news_grid tile scale-anm bcards all ambiente">
+						<img src="images/p2.jpg" alt=" " class="img-responsive">
+					</div>
+				</a>
+			</div>
+			<div class="w3layouts_gallery_grid tile scale-anm all ambiente">
+				<a href="images/p2.jpg" class="lsb-preview" data-lsb-group="header">
+					<div class="w3layouts_news_grid tile scale-anm bcards all ambiente">
+						<img src="images/p2.jpg" alt=" " class="img-responsive">
+					</div>
+				</a>
+			</div>
+			<div class="w3layouts_gallery_grid tile scale-anm all ambiente">
+				<a href="images/p2.jpg" class="lsb-preview" data-lsb-group="header">
+					<div class="w3layouts_news_grid tile scale-anm bcards all ambiente">
+						<img src="images/p2.jpg" alt=" " class="img-responsive">
+					</div>
+				</a>
+			</div>
+			<div class="w3layouts_gallery_grid tile scale-anm all ambiente">
+				<a href="images/p2.jpg" class="lsb-preview" data-lsb-group="header">
+					<div class="w3layouts_news_grid tile scale-anm bcards all ambiente">
+						<img src="images/p2.jpg" alt=" " class="img-responsive">
+					</div>
+				</a>
+			</div>
+			<div class="w3layouts_gallery_grid tile scale-anm all ambiente">
+				<a href="images/p2.jpg" class="lsb-preview" data-lsb-group="header">
+					<div class="w3layouts_news_grid tile scale-anm bcards all ambiente">
+						<img src="images/p2.jpg" alt=" " class="img-responsive">
+					</div>
+				</a>
+			</div>
+            
+      	</div>
+    <div style="clear:both;"></div>   
+  </div>
+ </div>
+</section>
+
 <!-- gallery js -->
-	<script src="js/lsb.min.js"></script>
-	<script>
-	$(window).load(function() {
-		  $.fn.lightspeedBox();
-		});
-	</script>
+<script src="js/lsb.min.js"></script>
+<script>
+$(window).load(function() {
+	  $.fn.lightspeedBox();
+	});
+</script>
 <!-- //gallery js -->
+
+        <script type="text/javascript">
+        	//<!--    portfolio  JS  =================    -->
+			       
+		    $(function() {
+				var selectedClass = "";
+				$(".fil-cat").click(function(){ 
+				selectedClass = $(this).attr("data-rel"); 
+		    $("#portfolio").fadeTo(100, 0.1);
+				$("#portfolio div").not("."+selectedClass).fadeOut().removeClass('scale-anm');
+			    setTimeout(function() {
+			      $("."+selectedClass).fadeIn().addClass('scale-anm');
+			      $("#portfolio").fadeTo(300, 1);
+			    }, 300); 
+					
+				});
+			});
+        </script>
+
+<!-- avaliation form -->
+	<div class="contact-w3ls" id="contact">
+		<div class="container">
+			<h3>Envie sua sugestão, crítica ou elogio</h3>
+				<form action="#" method="post">
+					<div class="col-md-5 col-sm-5 contact-left agileits-w3layouts">
+					
+						<div class="form-control"> 
+							<label class="header">Full Name <span>:</span></label>
+							<input type="text" name="First Name" placeholder="Name" required="">
+						</div>
+						
+						<div class="form-control"> 
+							<label class="header">Email <span>:</span></label>
+							<input type="email"  class="email" name="Email" placeholder="Email" required="">
+						</div>
+						
+						<div class="form-control">
+							<label class="header">Mobile Number <span>:</span></label>
+							<input type="text" name="Number" placeholder="Mobile Number" required="">
+						</div>	
+						<!-- <input type="text" class="email" name="Last Name" placeholder="Last Name" required=""> -->
+					</div> 
+					<div class="col-md-7 col-sm-7 contact-right agileits-w3layouts">
+						<div class="form-control">
+							<label class="header">Message <span>:</span></label>
+							<textarea name="Message" placeholder="Message" required=""></textarea>
+						</div>	
+					<div class="clearfix"> </div> 
+					</div>
+						<input type="submit" value="Enviar">
+				</form>
+		</div>  
+	</div>  
+<!-- //avaliation form -->
 
 <!-- customer -->
 	<div class="customer jarallax" id="customer">
@@ -693,13 +617,13 @@ fit: true
 <!-- contact form -->
 	<div class="contact-w3ls" id="contact">
 		<div class="container">
-			<h3>contact form</h3>
+			<h3>Entre em contato conosco</h3>
 				<form action="#" method="post">
 					<div class="col-md-5 col-sm-5 contact-left agileits-w3layouts">
 					
 						<div class="form-control"> 
-							<label class="header">Full Name <span>:</span></label>
-							<input type="text" name="First Name" placeholder="Name" required="">
+							<label class="header">Nome <span>:</span></label>
+							<input type="text" name="First Name" placeholder="Nome" required="">
 						</div>
 						
 						<div class="form-control"> 
@@ -708,19 +632,19 @@ fit: true
 						</div>
 						
 						<div class="form-control">
-							<label class="header">Mobile Number <span>:</span></label>
-							<input type="text" name="Number" placeholder="Mobile Number" required="">
+							<label class="header">Telefone <span>:</span></label>
+							<input type="text" name="Number" placeholder="Número de telefone" required="">
 						</div>	
 						<!-- <input type="text" class="email" name="Last Name" placeholder="Last Name" required=""> -->
 					</div> 
 					<div class="col-md-7 col-sm-7 contact-right agileits-w3layouts">
 						<div class="form-control">
-							<label class="header">Message <span>:</span></label>
-							<textarea name="Message" placeholder="Message" required=""></textarea>
+							<label class="header">Mensagem <span>:</span></label>
+							<textarea name="Message" placeholder="Mensagem" required=""></textarea>
 						</div>	
 					<div class="clearfix"> </div> 
 					</div>
-						<input type="submit" value="Send">
+						<input type="submit" value="Enviar">
 				</form>
 		</div>  
 	</div>  
@@ -728,14 +652,14 @@ fit: true
 
 <!-- map -->
 <div class="map">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56801282.36779669!2d-131.48418691999598!3d29.66539724812115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6dc13a009bba0319!2sPret+A+Manger!5e0!3m2!1sen!2sin!4v1491030489371"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.1155693958376!2d-46.646924984448084!3d-23.636031870240405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5af1ba2ab777%3A0xb4717a79af458138!2sR.+Alberto+Leal%2C+540+-+Jabaquara%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1510426446724" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		<div class="agile_map_grid">
 			<div class="agile_map_grid1">
 				<h3>Contact Info</h3>
 				<ul>
-					<li><i class="fa fa-map-marker" aria-hidden="true"></i><span>address :</span> 507 Boylston St,Boston USA.</li>
-					<li><i class="fa fa-envelope" aria-hidden="true"></i><span>email :</span> <a href="mailto:info@example.com">info@example.com</a></li>
-					<li><i class="fa fa-phone" aria-hidden="true"></i><span>call us :</span> (+020) 142 3246 918</li>
+					<li><i class="fa fa-map-marker" aria-hidden="true"></i><span>Endereço :</span> R. Alberto Leal, 540 - Jabaquara, São Paulo - SP.</li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i><span>email :</span> <a href="mailto:contato@kingyotemakeria.com.br">contato@kingyotemakeria.com.br</a></li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i><span>Telefone :</span> (11) 5594-6313</li>
 				</ul>
 			</div>
 		</div>
@@ -764,7 +688,6 @@ fit: true
 					<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a> 
 				</div>  
 		</div>
-		<div class="clearfix"></div>
 </div>
 <!-- //footer -->
 
